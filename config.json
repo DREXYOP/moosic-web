@@ -1,0 +1,22 @@
+{
+  "Id": "936875191580102666",
+  "Secret": "s8DNXjrLdGJQRZhf-QNrrsXSSW",
+  "domain": "https://moosicbot.org/",
+  "callback": "https://moosicbot.org/callback",
+  "invite": "https://discord.com/oauth2/authorize?client_id=936875191580102666&permissions=8&redirect_uri=https://discord.gg/6Q9D7R8hYc&response_type=code&&scope=guilds.join%20bot%20applications.commands",
+  "support": "https://discord.com/invite/moosic",
+  "patreon": "https://www.patreon.com/MoosicBotDiscord",
+  "github": "https://github.com/moosicbot",
+  "mongodb": "mongodb+srv://debadithya:debadithya@cluster0.pme4jf7.mongodb.net/?retryWrites=true&w=majority",
+  "webhook": "STRIPE_WEBHOOK",
+  "plans": {
+    "gold": "STRIPE_PRICE",
+    "platinum": "STRIPE_PRICE",
+    "daimond": "STRIPE_PRICE",
+    "custom": "STRIPE_PRICE"
+  },
+  "discordWebhook": {
+    "id": "1017429507872923648",
+    "secret": "-sdY2ptAeiQi1kGTHLWuVnyRbe7GLe_5aUSaUiMvKyLQWXEovoZG78PdKSavqMR_xgET"
+  }
+}

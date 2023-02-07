@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://moosicbot.org/">
+	<meta property="og:title" content="Moosic">
+	<meta property="og:description"
+		content="An incredibly easy to use music bot for Discord that doesn't skip on features. Supports Spotify, Apple Music, Soundcloud and more. Invite Moosic today and start listening to your favorite songs together with your friends!">
+	<meta property="og:image"
+		content="https://cdn.discordapp.com/avatars/936875191580102666/f52a1714f13267dbe5085d97a5575820.png?size=1024">
+	<meta name="theme-color" content="#fe1615">
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://moosicbot.org/">
+	<meta property="twitter:title" content="Moosic">
+	<meta property="twitter:description"
+		content="An incredibly easy to use music bot for Discord that doesn't skip on features. Supports Spotify, Apple Music, Soundcloud and more. Invite Moosic today and start listening to your favorite songs together with your friends!">
+	<meta property="twitter:image"
+		content="https://cdn.discordapp.com/avatars/936875191580102666/f52a1714f13267dbe5085d97a5575820.png?size=1024">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<script>
+		$(document).mouseup(function (e) {
+			var container = $("#dropdown");
+			// if the target of the click isn't the container nor a descendant of the container
+			if (!container.is(e.target) && container.has(e.target).length === 0) {
+				container.hide();
+
+			}
+		});
+	</script>
+	<link rel="icon" type="image/png"
+		href="https://media.discordapp.net/attachments/950398337671106560/1017375592485769246/1662631503027.png?width=427&height=427" />
+
+</head>
+
+<body class="h-full">
+	<!-- Navbar goes here -->
+	<nav class="bg-neutral-50 shadow-lg">
+		<div class="max-w-6xl mx-auto px-4">
+			<div class="flex justify-between">
+				<div class="flex space-x-7">
+					<div>
+						<!-- Website Logo -->
+						<a href="/" class="flex items-center py-4 ">
+							<img src="https://media.discordapp.net/attachments/1047503944206798928/1072509122500640778/20230207_185758.png"
+								alt="Logo" class=" h-8 w-20 mr-2">
+<!-- 
+							<p class="py-2 px-2 text-cyan-500 hover:text-cyan-800  font-bold"> Moosic | </p> -->
+						</a>
+					</div>
+					<!-- Primary Navbar items -->
+					<div class="hidden md:flex items-center space-x-1">
+						<a href="/" class="py-4 px-2 text-zinc-400 hover:text-zinc-600  font-semibold ">Home</a>
+						<a href="/premium"
+							class="py-4 px-2 text-zinc-400 font-semibold hover:text-zinc-600 transition duration-300">Premium</a>
+						<a href="/invite"
+							class="py-4 px-2 text-zinc-400 font-semibold hover:text-zinc-600 transition duration-300">Invite</a>
+						<a href="/support"
+							class="py-4 px-2 text-zinc-400 font-semibold hover:text-zinc-600 transition duration-300">Support</a>
+					</div>
+				</div>
+				<!-- Secondary Navbar items -->
+				<!-- <div class="hidden md:flex items-center space-x-3 ">
+					<% if(user && user.id) { %>
+
+
+						<div x-data="{ open: false }"
+							class="text-cyan-500 w-auto shadow  font-bold pl-4 pr-4 rounded-lg">
+							<div @click="open = !open" class="w-auto h-auto">
+								<div class="flex justify-center items-center space-x-3 cursor-pointer h-auto">
+									<div
+										class="text-white w-10 h-10 rounded-full overflow-hidden border-2  border-white">
+										<img src="https://cdn.discordapp.com/avatars/<%=user.id%>/<%=user.avatar%>.png"
+											alt="" class="w-full h-full object-cover ">
+									</div>
+									<p>
+										<%= user.username %>
+									</p>
+								</div>
+
+								<div id="dropdown" x-show="open"
+									class="absolute  bg-gray-800 rounded-lg  w-auto border">
+									<ul class="space-y-3 ">
+										<li class="font-medium">
+											<form method="POST" action="/create-customer-portal-session">
+												<button type="submit"
+													class="flex items-center transform transition-colors duration-200 border-r-4 border-transparent hover:border-indigo-700">
+													<div class="mr-3">
+														<img src="https://github.com/parasop/resource/blob/main/bill.png?raw=true"
+															class="w-6 h-6" fill="none" stroke="currentColor"
+															viewBox="0 0 24 24"
+															xmlns="https://github.com/parasop/resource/blob/main/bill.png?raw=true">
+													</div>
+													Billing
+												</button>
+											</form>
+										</li>
+
+										<hr class="dark:border-gray-700">
+										<li class="font-medium">
+											<a href="/logout"
+												class="flex items-center transform transition-colors duration-200 border-r-4 border-transparent hover:border-red-600">
+												<div class="mr-3 text-red-600">
+													<img src="https://github.com/parasop/resource/blob/main/sign-out.png?raw=true"
+														class="w-6 h-6" fill="none" stroke="currentColor"
+														viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+													<path stroke-linecap="round" stroke-linejoin="round"
+														stroke-width="2"
+														d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+													</path></svg>
+												</div>
+												Logout
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<% }else { %>
+							<a href="/login"
+								class="border-slate-700 rounded-xl bg-cyan-400">Login</a>
+							<% } %>
+				</div> -->
+				<!-- Mobile menu button -->
+				<div class="md:hidden flex items-center">
+					<button class="outline-none mobile-menu-button">
+						<svg class=" w-6 h-6 text-gray-500 hover:text-cyan-500 " x-show="!showMenu" fill="none"
+							stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+							stroke="currentColor">
+							<path d="M4 6h16M4 12h16M4 18h16"></path>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- mobile menu -->
+		<div class="hidden mobile-menu ml-2">
+			<ul class="">
+				<li><a href="/" class="block text-sm px-2 py-4 text-zinc-400 font-bold">Home</a></li>
+				<li><a href="/premium"
+						class="font-bold text-zinc-400 block text-sm px-2 py-4 hover: transition duration-300">Premium</a>
+				</li>
+
+				<li><a href="/invite"
+						class="font-bold text-zinc-400 block text-sm px-2 py-4 hover: transition duration-300">Invite</a>
+				</li>
+				<li><a href="/suppory"
+						class="font-bold text-zinc-400 block text-sm px-2 py-4 hover: transition duration-300 mb-4">Support</a>
+				</li>
+				<!-- <li>
+					<% if(user && user.id) { %>
+
+
+						<div x-data="{ open: false }"
+							class="text-cyan-400 w-auto shadow  font-bold pl-4 pr-4 rounded-lg">
+							<div @click="open = !open" class="w-auto h-auto">
+								<div class="flex justify-center items-center space-x-3 cursor-pointer h-auto">
+									<div
+										class="text-white w-10 h-10 rounded-full overflow-hidden border-2  border-white">
+										<img src="https://cdn.discordapp.com/avatars/<%=user.id%>/<%=user.avatar%>.png"
+											alt="" class="w-full h-full object-cover ">
+									</div>
+									<p>
+										<%= user.username %>
+									</p>
+								</div>
+
+								<div id="dropdown" x-show="open"
+									class="absolute  bg-gray-800 rounded-lg  w-auto border">
+									<ul class="space-y-3 ">
+										<li class="font-medium">
+											<form method="POST" action="/create-customer-portal-session">
+												<button type="submit"
+													class="flex items-center transform transition-colors duration-200 border-r-4 border-transparent hover:border-indigo-700">
+													<div class="mr-3">
+														<img src="https://github.com/parasop/resource/blob/main/bill.png?raw=true"
+															class="w-6 h-6" fill="none" stroke="currentColor"
+															viewBox="0 0 24 24"
+															xmlns="https://github.com/parasop/resource/blob/main/bill.png?raw=true">
+													</div>
+													Billing
+												</button>
+											</form>
+										</li>
+
+										<hr class="dark:border-gray-700">
+										<li class="font-medium">
+											<a href="/logout"
+												class="flex items-center transform transition-colors duration-200 border-r-4 border-transparent hover:border-red-600">
+												<div class="mr-3 text-red-600">
+													<img src="https://github.com/parasop/resource/blob/main/sign-out.png?raw=true"
+														class="w-6 h-6" fill="none" stroke="currentColor"
+														viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+													<path stroke-linecap="round" stroke-linejoin="round"
+														stroke-width="2"
+														d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+													</path></svg>
+												</div>
+												Logout
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<% }else { %>
+							<a href="/login"
+								class="py-2 px-2 font-medium text-white bg-cyan-500 rounded hover:bg-cyan-400 w-auto">Login</a>
+							<% } %>
+		</div>
+
+		</li> -->
+		</ul>
+		</div>
+		<script>
+			const btn = document.querySelector("button.mobile-menu-button");
+			const menu = document.querySelector(".mobile-menu");
+
+			btn.addEventListener("click", () => {
+				menu.classList.toggle("hidden");
+			});
+		</script>
+	</nav>
+</body>
+
+</html>

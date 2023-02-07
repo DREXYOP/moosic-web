@@ -1,0 +1,42 @@
+{
+  "name": "moosic",
+  "version": "5.0.0",
+  "description": "anti nuke bot discord",
+  "main": "server.js",
+  "scripts": {
+    "build css": "npx tailwindcss -i ./public/tailwind.css -o ./public/style.css --watch",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parasop/ANTI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parasop/ANTI/issues"
+  },
+  "homepage": "https://github.com/parasop/ANTI#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "body-parser": "^1.20.0",
+    "discord.js": "^14.3.0",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "memorystore": "^1.6.7",
+    "mongodb": "^4.5.0",
+    "mongoose": "^6.3.5",
+    "passport": "^0.5.2",
+    "passport-discord": "^0.1.4",
+    "stripe": "^9.6.0",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "prettier": "2.7.1",
+    "tailwindcss": "^3.0.24"
+  }
+}
